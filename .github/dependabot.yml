@@ -10,3 +10,21 @@ updates:
    directory: "/"
    schedule:
      interval: weekly
+
+ - package-ecosystem: "pip"
+   directory: "/"
+   schedule:
+     interval: "weekly"
+   # Raise pull requests for version updates
+   # to pip against the `main` branch
+   target-branch: "main"
+   # Labels on pull requests for version updates only
+   labels:
+     - "pip dependencies"
+     - "dependencies"
+   # Allow up-to-date branches to be rebased
+   rebase-strategy: "auto"
+   # Specify labels for pull requests
+   pull-request-branch-name:
+     # Separate sections of the branch name with a hyphen
+     separator: "-"
